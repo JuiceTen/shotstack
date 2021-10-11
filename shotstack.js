@@ -1,79 +1,80 @@
 import axios from 'axios'
 import shotstack from 'shotstack-sdk'
-import json from './jsondata.js'
+// import json from './jsondata.js'
 import fetch from 'node-fetch'
 import aws from 'aws-sdk'
-const apiKey = 'tKNkNz722x3jmBdE3nH447BP9V3ECDAKaX2hiS3G'
+import template1 from './template1.js'
+import fs from 'fs'
+import path from 'path'
+import https from 'https'
+import env from 'dotenv'
+
+env.config()
 
 // console.log(new aws.S3())
 // const images = fetch('https://frostcm-images-and-videos.s3.us-east-2.amazonaws.com/images/', {
 //   method: 'GET',
 // }).then((data) => {
-//   console.log(data.json())
+//   console.log(data)
 // }).catch(err => console.log(err))
-
-const data = {
-    "timeline": {
-        "background": "#000000",
-        "tracks": [
-          {
-            "clips": [
-              {
-                "asset": {
-                  
-                  "type": "title",
-                  "text": "Hello World",
-                  "style": "future"
-                },
-                "start": 0,
-                "length": 5
-              }
-            ]
-          }
-        ]
-      },
-      "output": {
-        "format": "mp4",
-        "resolution": "sd"
-      }
-    }
-// console.log(shotstack.Timeline())
-const shotStackTest = () => {
+const shotStackTest = async () => {
     fetch('https://api.shotstack.io/stage/render', {
         method: 'POST',
-        body: JSON.stringify(data),
+        body: JSON.stringify(template1),
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'x-api-key': apiKey
+            'x-api-key': process.env.apiKey
         },
         
     }).then((res) => {
         // console.log(res.clone())
         return res.json()
     }).then((body) => {
-        console.log(body)
-    })
+        // shotStackGet(body.response.id)
+        return body.response.id
+    }).then( id => shotStackGet(id))
     .catch(err => console.log(err))
+
+
 }
 
-shotStackTest()
 
-const shotStackGet = () => {
-    fetch('https://api.shotstack.io/stage/render/581cc558-a3ff-4648-9291-a01865197433', {
+const shotStackGet = (id) => {
+    fetch('https://api.shotstack.io/stage/render/'+id, {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
-            'x-api-key': apiKey
+            'x-api-key': process.env.apiKey
         }
     })
     .then((res) => {
+
         return res.json()
     })
     .then((body) => {
-        console.log(body)
+        if(body.response.status !== 'done') {
+          shotStackGet(body.response.id)
+        } else {
+          console.log(body)
+        }
     })
     .catch(err => console.log(err))
 }
 
-shotStackGet()
+// shotStackTest()
+
+const download = async () => {
+  await https.get('https://shotstack-api-stage-output.s3-ap-southeast-2.amazonaws.com/nlc2bsp6q4/4d8a986a-1b54-463d-ab37-6f844510f1c8.mp4', res => {
+    const pathFile = path.resolve('videos', 'shotstack.mp4')
+    const filePath = fs.createWriteStream(pathFile)
+    console.log(res)
+    res.pipe(filePath)
+    filePath.on('finish', () => {
+      filePath.close()
+      console.log('finished download')
+    })
+  }) 
+}
+
+download()
