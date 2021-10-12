@@ -8,8 +8,10 @@ import fs from 'fs'
 import path from 'path'
 import https from 'https'
 import env from 'dotenv'
+import template2 from './template2.js'
 
 env.config()
+// let url = ''
 
 // console.log(new aws.S3())
 // const images = fetch('https://frostcm-images-and-videos.s3.us-east-2.amazonaws.com/images/', {
@@ -57,15 +59,17 @@ const shotStackGet = (id) => {
           shotStackGet(body.response.id)
         } else {
           console.log(body)
+          download(body.response.url)
         }
     })
     .catch(err => console.log(err))
 }
 
-// shotStackTest()
+shotStackTest()
 
-const download = async () => {
-  await https.get('https://shotstack-api-stage-output.s3-ap-southeast-2.amazonaws.com/nlc2bsp6q4/4d8a986a-1b54-463d-ab37-6f844510f1c8.mp4', res => {
+const download = async (url) => {
+  // console.log(url)
+  await https.get(url, res => {
     const pathFile = path.resolve('videos', 'shotstack.mp4')
     const filePath = fs.createWriteStream(pathFile)
     console.log(res)
@@ -77,4 +81,4 @@ const download = async () => {
   }) 
 }
 
-download()
+// download()
