@@ -1,4 +1,5 @@
-{
+
+const data ={
   "timeline": {
     "soundtrack": {
       "src": "https://shotstack-assets.s3-ap-southeast-2.amazonaws.com/music/freepd/motions.mp3",
@@ -42,6 +43,11 @@
   },
   "output": {
     "format": "mp4",
-    "resolution": "1080"
+    "resolution": "1080",
+    "aspectRatio": "9:16"
+    
   }
 }
+
+
+export default data;

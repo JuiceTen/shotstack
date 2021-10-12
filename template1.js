@@ -17,7 +17,8 @@ const data = {
             "start": 0,
             "length": 15,
             "position": "bottomLeft",
-            "scale": 0.25
+            "scale": 0.25,
+            "fit": "contain"
           }
         ]
       },
@@ -31,7 +32,8 @@ const data = {
             "start": 21,
             "length": 2,
             "position": "bottomLeft",
-            "scale": 0.25
+            "scale": 0.25,
+            "fit": "contain"
           }
         ]
       },
@@ -59,7 +61,8 @@ const data = {
               "size": "medium"
             },
             "start": 1,
-            "length": 1
+            "length": 1,
+            "fit": "contain"
           }
         ]
       },
@@ -71,7 +74,8 @@ const data = {
               "src": "https://frostcm-images-and-videos.s3.us-east-2.amazonaws.com/videoClips/Time+Sqaure+1+(1).MOV"
             },
             "start": 2,
-            "length": 2
+            "length": 2,
+            "fit": "contain"
           }
         ]
       },
@@ -89,7 +93,8 @@ const data = {
             "length": 2,
             "transition": {
               "in": "carouselLeft"
-            }
+            },
+            "fit": "contain"
           }
         ]
       },
@@ -101,7 +106,8 @@ const data = {
               "src": "https://frostcm-images-and-videos.s3.us-east-2.amazonaws.com/videoClips/Time+Sqaure+1+(1).MOV"
             },
             "start": 4,
-            "length": 2
+            "length": 2,
+            "fit": "contain"
           }
         ]
       },
@@ -126,7 +132,8 @@ const data = {
               "src": "https://frostcm-images-and-videos.s3.us-east-2.amazonaws.com/videoClips/Time+Sqaure+1+(1).MOV"
             },
             "start": 7,
-            "length": 2
+            "length": 2,
+            "fit": "contain"
           }
         ]
       },
@@ -138,7 +145,8 @@ const data = {
               "src": "https://frostcm-images-and-videos.s3.us-east-2.amazonaws.com/videoClips/Time+Sqaure+1+(1).MOV"
             },
             "start": 9,
-            "length": 2
+            "length": 2,
+            "fit": "contain"
           }
         ]
       },
@@ -156,7 +164,8 @@ const data = {
             "length": 4,
             "transition": {
               "in": "carouselLeft"
-            }
+            },
+            "fit": "contain"
           }
         ]
       },
@@ -168,6 +177,7 @@ const data = {
               "src": "https://frostcm-images-and-videos.s3.us-east-2.amazonaws.com/videoClips/Time+Sqaure+1+(1).MOV"
             },
             "start": 11,
+            "fit": "contain",
             "length": 2
           }
         ]
@@ -180,7 +190,8 @@ const data = {
               "src": "https://frostcm-images-and-videos.s3.us-east-2.amazonaws.com/videoClips/Time+Sqaure+1+(1).MOV"
             },
             "start": 13,
-            "length": 2
+            "length": 2,
+            "fit": "contain"
           }
         ]
       },
@@ -198,7 +209,8 @@ const data = {
             "length": 2,
             "transition": {
               "in": "fade"
-            }
+            },
+            "fit": "contain"
           }
         ]
       },
@@ -228,7 +240,8 @@ const data = {
               "size": "medium"
             },
             "start": 18,
-            "length": 1
+            "length": 1,
+            "fit": "contain"
           }
         ]
       },
@@ -243,7 +256,8 @@ const data = {
               "size": "medium"
             },
             "start": 19,
-            "length": 1
+            "length": 1,
+            "fit": "contain"
           }
         ]
       },
@@ -258,7 +272,8 @@ const data = {
               "size": "medium"
             },
             "start": 20,
-            "length": 1
+            "length": 1,
+            "fit": "contain"
           }
         ]
       },
@@ -270,12 +285,14 @@ const data = {
               "src": "https://frostcm-images-and-videos.s3.us-east-2.amazonaws.com/videoClips/Time+Sqaure+1+(1).MOV"
             },
             "start": 15,
+            "fit": "contain",
             "length": 6,
             "scale": 0.5,
             "offset": {
               "x": -0.25,
               "y": -0.25
-            }
+            },
+            "fit": "contain"
           }
         ]
       },
@@ -287,12 +304,14 @@ const data = {
               "src": "https://frostcm-images-and-videos.s3.us-east-2.amazonaws.com/videoClips/Time+Sqaure+1+(1).MOV"
             },
             "start": 16,
+            "fit": "contain",
             "length": 5,
             "scale": 0.5,
             "offset": {
               "x": 0.25,
               "y": -0.25
-            }
+            },
+            "fit": "contain"
           }
         ]
       },
@@ -304,12 +323,14 @@ const data = {
               "src": "https://frostcm-images-and-videos.s3.us-east-2.amazonaws.com/videoClips/Time+Sqaure+1+(1).MOV"
             },
             "start": 17,
+            "fit": "contain",
             "length": 4,
             "scale": 0.5,
             "offset": {
               "x": 0.25,
               "y": 0.25
-            }
+            },
+            "fit": "contain"
           }
         ]
       },
@@ -326,7 +347,8 @@ const data = {
             "offset": {
               "x": -0.25,
               "y": 0.25
-            }
+            },
+            "fit": "contain"
           }
         ]
       },
@@ -338,7 +360,8 @@ const data = {
               "src": "https://frostcm-images-and-videos.s3.us-east-2.amazonaws.com/videoClips/Time+Sqaure+1+(1).MOV"
             },
             "start": 21,
-            "length": 2
+            "length": 2,
+            "fit": "contain"
           }
         ]
       },
@@ -356,7 +379,8 @@ const data = {
             "length": 2,
             "transition": {
               "in": "fade"
-            }
+            },
+            "fit": "contain"
           }
         ]
       },
@@ -374,7 +398,8 @@ const data = {
             "length": 2,
             "transition": {
               "in": "fade"
-            }
+            },
+            "fit": "contain"
           }
         ]
       },
@@ -392,7 +417,8 @@ const data = {
             "length": 5,
             "transition": {
               "in": "fade"
-            }
+            },
+            "fit": "contain"
           }
         ]
       }
@@ -400,7 +426,8 @@ const data = {
   },
   "output": {
     "format": "mp4",
-    "resolution": "sd"
+    "resolution": "sd",
+    "aspectRatio": "9:16"
   }
 }
 
